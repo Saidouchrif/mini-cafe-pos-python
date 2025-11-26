@@ -1,0 +1,15 @@
+        Café Caisse Manager
+   Ticket de caisse officiel
+--------------------------------
+Serveur : ali
+Date    : 2025-11-26 16:27:00
+N° Cmd  : 1
+--------------------------------
+Jus d'orange x1  12.00 DH
+Café au lait x1  11.00 DH
+Thé x1  8.00 DH
+--------------------------------
+TOTAL À PAYER : 31.00 DH
+--------------------------------
+Merci pour votre visite !
+À très bientôt.

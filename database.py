@@ -66,6 +66,14 @@ def init_db():
     )
     """)
 
+    # Paramètres (nom du café)
+    c.execute("""
+    CREATE TABLE IF NOT EXISTS settings (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        cafe_name TEXT NOT NULL
+    )
+    """)
+
     # Si la base est nouvelle → نزيدو الداتا ديال البداية
     if new_db:
         # Users (serveurs)
@@ -114,6 +122,14 @@ def init_db():
 
                 ("Gâteau au chocolat", 15, cat_map["Dessert"]),
             ]
+        )
+
+    c.execute("SELECT COUNT(*) FROM settings")
+    row = c.fetchone()
+    if not row or row[0] == 0:
+        c.execute(
+            "INSERT INTO settings (cafe_name) VALUES (?)",
+            ("Café Caisse Manager",),
         )
 
     conn.commit()
