@@ -309,16 +309,13 @@ class POSWindow(QWidget):
 
         ticket_text = "\n".join(lines)
 
-        # حفظ التذكرة فـ fichier
         ticket_name = f"ticket_{order_id}.txt"
         with open(ticket_name, "w", encoding="utf-8") as f:
             f.write(ticket_text)
 
-        # محاولة طباعة التذكرة (Windows)
         try:
-            os.startfile(ticket_name, "print")  # يرسلها للـ imprimante par défaut
+            os.startfile(ticket_name, "print")  
         except Exception as e:
-            # الى ما قدرش يطبع -> نقولو ليه يطبعها يدوي
             QMessageBox.information(
                 self,
                 "Ticket généré",
